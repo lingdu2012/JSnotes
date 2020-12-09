@@ -1,6 +1,6 @@
 # JSnotes
 > javascript相关代码片段笔记
-###对象的深拷贝（clone）
+### 对象的深拷贝（clone）
 > 注意typeof 与 intanceof 的区别
 > typeof 只能返回6个字符串，即 string、Boolean、number、function、object、undefined，不能对数组或对象进行判断
 > instanceof 返回true或false
@@ -54,7 +54,7 @@ let testArr=[1,3,2,8,5,6];
 
 console.log(arraySort(testArr));
 ```
-###不使用新数组去除数组中相邻重复的数字
+### 不使用新数组去除数组中相邻重复的数字
 > 注意两个用来计数的i和count的使用
 ```javascript
 function arrayClear(arr){ 
