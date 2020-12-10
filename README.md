@@ -81,6 +81,18 @@ function arrayClear(arr){
 let arr2=[1,1,2,3,3,5,6,6];
 console.log(arrayClear(arr2));
 ```
+> 利用ES6新数据结构快速去重
+```javascript
+//去重数组
+let arr4=[1,1,2,3,3,5,6,6];
+let newArr=[...new Set(arr4)];
+console.log(newArr);
+//去重字符串
+let str="absbsdo";
+let newStr=[...new Set(str)].join("");
+console.log(newStr);
+```
+
 ### 在数组中找出两数之和等于目标数字的组合
 > 找出数组中下标的组合，尽量少重复使用同一个元素
 ```javascript
