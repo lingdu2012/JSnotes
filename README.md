@@ -81,4 +81,22 @@ function arrayClear(arr){
 let arr2=[1,1,2,3,3,5,6,6];
 console.log(arrayClear(arr2));
 ```
+### 在数组中找出两数之和等于目标数字的组合
+> 找出数组中下标的组合，尽量少重复使用同一个元素
+```javascript
+function findNums(arr,sum){
+	let index=[];
+	let len=arr.length;
+	for(let i=0;i<len;i++){
+		for(let j=i+1;j<len;j++){
+			if(arr[i]+arr[j]==sum){
+				index.push([i,j]);
+			}
+		}
+	}
+	return index;
+}
+let arr3=[2,7,4,6,3];
 
+console.log(findNums(arr3,9));
+```
