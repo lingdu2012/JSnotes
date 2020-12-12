@@ -112,3 +112,16 @@ let arr3=[2,7,4,6,3];
 
 console.log(findNums(arr3,9));
 ```
+### 简单计数器
+> 利用闭包函数
+```javascript
+var add = (function () {
+    var counter = 0;
+    return function () {
+		return counter += 1;
+	}
+})();
+console.log(add());
+console.log(add());
+console.log(add());
+```
