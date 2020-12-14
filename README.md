@@ -125,3 +125,30 @@ console.log(add());
 console.log(add());
 console.log(add());
 ```
+
+### 找出字符串中的最长字串
+> 连续的无重复子串
+```javascript
+function findChildStr(str){
+	let arr=[...str];
+	let child=[];
+	let maxChild=[];
+	let maxLen=0;
+	for(let i=0;i<arr.length;i++){
+		if(child.findIndex(y => y==arr[i])>-1){
+			if(child.length > maxLen){
+				maxLen=child.length;
+				maxChild=child;
+			}
+			child=[];
+			child.push(arr[i]);
+		}else{
+			child.push(arr[i]);
+		}
+	}
+	console.log(maxChild);
+	return maxChild.join("");
+}
+let longStr='abcabcbb';
+console.log(findChildStr(longStr));
+```
