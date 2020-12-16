@@ -152,3 +152,24 @@ function findChildStr(str){
 let longStr='abcabcbb';
 console.log(findChildStr(longStr));
 ```
+
+### 通过一个方法两种方式进行求和
+> arguments对象对于可以传递可变数量的参数的函数很有用
+```javascript
+function sum(){
+    let num = arguments[0];
+    if(arguments.length==1){
+        return function(sec){
+            return num+sec;
+        }
+    }else{
+        let num = 0;
+        for(let i = 0;i<arguments.length;i++){
+            num = num + arguments[i];
+        }
+    return num;
+    }
+}
+console.log(sum(2)(3));
+console.log(sum(2,3));
+```
