@@ -173,3 +173,23 @@ function sum(){
 console.log(sum(2)(3));
 console.log(sum(2,3));
 ```
+### 改变上下文指向
+> bind，call，apply都是为了改变函数体内部 this 的指向。少量参数用call，大量参数用apply
+> JavaScript的上下文分为定义时上下文，运行时上下文，其上下文是可以改变
+> bind调用完成后不执行，call，apply是马上执行。相互之间是互通的，bind不兼容（IE5，6，7，8）
+```javascript
+function log(){
+  console.log.apply(console, arguments);
+};
+console.log("输出");
+log(1);    //1
+log(1,2);    //1 2
+
+function log(){
+  var args = Array.prototype.slice.call(arguments);
+  var date = new Date(); 
+  var tim = date.getTime(); 
+  args.unshift(tim);
+  console.log.apply(console, args);
+};
+```
